@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 800px;
+}
+
+.rubik-cube {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: spin 10s linear infinite;
+    transform: rotateX(45deg) rotateY(45deg);
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    opacity: 0.8;
+}
+
+.front {
+    background-color: #ff6c4d;
+    transform: translateZ(100px);
+}
+
+.back {
+    background-color: #f5d460;
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+    background-color: #0091ad;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+    background-color: #00a553;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+    background-color: #ffcb08;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    background-color: #d42e52;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+    100% {
+        transform: rotateX(45deg) rotateY(405deg);
+    }
+}
